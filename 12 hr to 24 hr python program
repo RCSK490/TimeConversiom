@@ -1,0 +1,65 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    # Write your code here
+    g=s[0:len(s)-2]
+    k=s[len(s)-2:len(s)];
+    if(k=='AM'):
+        j=g[0:2];
+        if(j=='12'):
+            j='00'
+        l=g[2:len(g)]
+        a=j+l;
+        return a
+    if(k=='PM'):
+        j=g[0:2];
+        if(j=='01'):
+            j='13'
+        if(j=='02'):
+             j='14'
+        if(j=='03'):
+             j='15'
+        if(j=='04'):
+             j='16'
+        if(j=='05'):
+             j='17'
+        if(j=='06'):
+             j='18'
+        if(j=='07'):
+             j='19'
+        if(j=='08'):
+             j='20'
+        if(j=='09'):
+             j='21'
+        if(j=='10'):
+             j='22'
+        if(j=='11'):
+             j='23'
+        l=g[2:len(g)]
+        a=j+l;
+        return a
+        
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
